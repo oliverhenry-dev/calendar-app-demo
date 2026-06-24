@@ -1,0 +1,1 @@
+- [Project Stack](project_stack.md) — React 19.1 + Vite 7.0, plain JSX, localStorage, no backend, beginner demo
