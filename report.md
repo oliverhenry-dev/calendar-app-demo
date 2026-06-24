@@ -6,7 +6,7 @@
 github_username: oliverhenry-dev
 personal_repo_url: https://github.com/oliverhenry-dev/calendar-app-demo
 project_summary: A client-side calendar app built with React and Vite that lets users browse months, create/edit/delete events, and persist data in localStorage — no backend required.
-slides_url: <!-- TODO: add slides path, e.g. slides/pitch.md -->
+slides_url: pechakucha-6x20.md
 
 ## Methodology
 
