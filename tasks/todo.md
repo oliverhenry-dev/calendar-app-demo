@@ -148,3 +148,57 @@ Build a simple calendar app with month view, event management, and localStorage 
 - [x] App runs without errors
 - [x] Responsive on all screen sizes
 - [x] Data persists in localStorage
+
+---
+
+# Chapter 5 — How to Submit
+
+## Checklist
+
+### Step 1 — Use Skills + Subagents ✅
+- [x] Install or build at least **one Skill** (`.claude/skills/<name>/SKILL.md`) — code-review, react-calendar-review, frontend-design
+- [x] Install or build at least **one Subagent** (`.claude/agents/<name>.md`) — code-improver, docs-helper
+- [x] Actually use them on the project (proof in repo) — git history shows usage
+
+### Step 2 — List AI Tools ✅
+- [x] Write short list of AI tools/workflow pieces used → `docs/ai-tools.md`
+- [x] One line each describing what it done
+
+### Step 3 — Show Trigger + Commands ✅
+- [x] Document how to fire each custom skill/agent → `docs/trigger-commands.md`
+- [x] Document **Trigger** — when/how it activates
+- [x] Document **Command** — exact command or phrase to run
+
+### Step 4 — Tech-Stack Slide Deck ✅
+- [x] Create `slides/tech-stack.md` inside repo
+- [x] Cover: tech stack
+- [x] Cover: agents
+- [x] Cover: skills
+- [x] Cover: methodology
+- [x] Cover: trigger
+- [x] Cover: commands
+
+### Step 5 — Get Feedback (pick ONE) ⏳
+- [x] Choose one template → `feedback-template.md`
+- [x] Copy template into repo → `docs/feedback.md`
+- [ ] Fill in the feedback from a real user ← **needs real user input**
+- [ ] Link it in report.md
+- [ ] Identify open issues to carry into Chapter 6
+
+### Step 6 — Fill in Report (TEAM repo)
+- [x] Copy `_TEMPLATE.md` to `ch-5/<github-username>/report.md` — template filled in this repo
+- [ ] Sync team repo: `git checkout main && git pull`
+- [ ] Create branch: `git checkout -b yourname/ch-5`
+- [ ] Copy filled report to team repo
+- [ ] Commit: `git add ch-5/yourname/report.md && git commit -m "ch-5: report"`
+- [ ] Push: `git push -u origin yourname/ch-5`
+- [ ] Open Pull Request on GitHub
+
+### Step 7 — Doctor Check
+- [ ] Run `bash doctor.sh ch-5`
+- [ ] Fix any red ❌ lines
+- [ ] Re-run until all green ✅
+
+### Step 8 — Submit in Discord
+- [ ] Post in `#ch-5` channel that you're done
+- [ ] Wait for instructor ✅ reaction to unlock next chapter
