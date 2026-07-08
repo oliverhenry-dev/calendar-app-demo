@@ -31,17 +31,20 @@ export function formatDateKey(year, month, day) {
   return `${year}-${monthStr}-${dayStr}`;
 }
 
+const MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
+const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
 /**
  * Get month name from month index
  * @param {number} month - The month (0-11)
  * @returns {string} Full month name
  */
 export function getMonthName(month) {
-  const months = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
-  ];
-  return months[month];
+  return MONTHS[month];
 }
 
 /**
@@ -49,7 +52,7 @@ export function getMonthName(month) {
  * @returns {string[]} Array of day abbreviations
  */
 export function getDayNames() {
-  return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  return DAY_NAMES;
 }
 
 /**
@@ -67,5 +70,5 @@ export function parseDateKey(dateKey) {
  * @returns {string} Unique identifier
  */
 export function generateId() {
-  return Date.now().toString(36) + Math.random().toString(36).slice(2);
+  return crypto.randomUUID();
 }

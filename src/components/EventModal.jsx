@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { X, Trash2, Save } from 'lucide-react';
 import { parseDateKey, generateId } from '../utils/calendarUtils';
 
@@ -28,16 +28,24 @@ const EventModal = ({ isOpen, onClose, onSave, onDelete, selectedDate, eventToEd
     }
   }, [isOpen, eventToEdit]);
 
+  const onCloseRef = useRef(onClose);
+  const isOpenRef = useRef(isOpen);
+
+  useEffect(() => {
+    onCloseRef.current = onClose;
+    isOpenRef.current = isOpen;
+  }, [onClose, isOpen]);
+
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
+      if (e.key === 'Escape' && isOpenRef.current) {
+        onCloseRef.current();
       }
     };
 
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [isOpen, onClose]);
+  }, []);
 
   const validate = () => {
     const newErrors = {};
@@ -78,7 +86,7 @@ const EventModal = ({ isOpen, onClose, onSave, onDelete, selectedDate, eventToEd
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
       onClick={handleBackdropClick}
     >
       <div className="w-full max-w-md bg-white rounded-lg shadow-xl overflow-hidden">
@@ -90,7 +98,11 @@ const EventModal = ({ isOpen, onClose, onSave, onDelete, selectedDate, eventToEd
             </h2>
             {parsedDate && (
               <p className="text-sm text-gray-500">
-                {parsedDate.month + 1}/{parsedDate.day}/{parsedDate.year}
+                {new Date(parsedDate.year, parsedDate.month, parsedDate.day).toLocaleDateString(undefined, {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
               </p>
             )}
           </div>
