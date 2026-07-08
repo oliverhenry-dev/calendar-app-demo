@@ -63,3 +63,7 @@ npm run dev
 - **Events schema** — stored as `{ "YYYY-MM-DD": [{ id, title, time, description }] }`. IDs generated via `crypto.randomUUID()`.
 - **Date utilities** — pure functions in `calendarUtils.js` handle all date math (days in month, first day of week, date key formatting) to keep components clean.
 - **Modal UX** — Escape key closes the modal, backdrop click closes it, delete has a confirmation step to prevent accidents.
+
+![screenshot 1 — month view with event dots](screenshots/01.png)
+![screenshot 2 — event modal open with add form](screenshots/02.png)
+![screenshot 3 — event modal showing saved event details](screenshots/03.png)
